@@ -1,0 +1,69 @@
+﻿@model IEnumerable<final.Models.expo>
+
+@{
+    ViewBag.Title = "Showproduct";
+    Layout = "~/Views/Shared/_Layoutadmin.cshtml";
+}
+
+<h2>Showproduct</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Addproduct")
+</p>
+<table class="table table-bordered table-striped text-center"  >
+    <tr  > 
+        @*<th>
+            @Html.DisplayNameFor(model => model.exp_id)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.exp_title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.exp_img)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.exp_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.exp_discription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.exp_owner)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.exp_status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr style="color: #fe295d;">
+    @*<td>
+        @Html.DisplayFor(modelItem => item.exp_id)
+    </td>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.exp_title)
+    </td>
+    <td>
+        <img src="~/Image/@item.exp_img" height="100px" , width="120px" class="img-circle" />
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.exp_date)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.exp_discription)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.exp_owner)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.exp_status)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit_product", new { id=item.exp_id }) |
+        @Html.ActionLink("Delete", "Delete_product", new { id=item.exp_id  })
+    </td>
+</tr>
+}
+
+</table>

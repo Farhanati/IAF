@@ -1,0 +1,263 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Signup</title>
+    <link rel="stylesheet" href="~/MainSite/style1.css">
+    <link href="~/MainSite/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Aladin" rel="stylesheet">
+    <link rel="stylesheet" href="~/MainSite/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <style>
+        .navbar, .hi {
+            font-family: 'Aladin', cursive;
+        }
+
+        .nav-item {
+            font-size: 18px;
+        }
+
+        .btn {
+            background-color: #fff !important;
+        }
+
+        .navbar-brand {
+            font-size: 30px;
+            color: #fff !important;
+            padding-top: 10px;
+        }
+
+            .navbar-brand span {
+                font-size: 20px;
+            }
+
+        .hi {
+            background: #000;
+        }
+
+        .col-sm-7 a:hover {
+            text-decoration: underline;
+        }
+
+        ul.social-network {
+            list-style: none;
+            display: inline;
+            margin-left: 0 !important;
+            padding: 0;
+        }
+
+            ul.social-network li {
+                display: inline;
+                margin: 0 5px;
+            }
+
+
+        /* footer social icons */
+        .social-network a.icogithub:hover {
+            background-color: grey;
+        }
+
+        .social-network a.icoFacebook:hover {
+            background-color: #3B5998;
+        }
+
+        .social-network a.icoTwitter:hover {
+            background-color: #33ccff;
+        }
+
+        .social-network a.icoGoogle:hover {
+            background-color: #e6a924;
+        }
+
+        .social-network a.icoVimeo:hover {
+            background-color: #0590B8;
+        }
+
+        .social-network a.icoLinkedin:hover {
+            background-color: #007bb7;
+        }
+
+            .social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
+            .social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
+                color: #fff;
+            }
+
+        a.socialIcon:hover, .socialHoverClass {
+            color: #44BCDD;
+        }
+
+        .social-circle li a {
+            display: inline-block;
+            position: relative;
+            margin: 0 auto 0 auto;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 0;
+            text-align: center;
+            width: 25px;
+            height: 25px;
+            font-size: 12px;
+        }
+
+        .social-circle li i {
+            margin: 0;
+            line-height: 25px;
+            text-align: center;
+        }
+
+        .social-circle li a:hover i, .triggeredHover {
+            -moz-transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            -ms--transform: rotate(360deg);
+            transform: rotate(360deg);
+            -webkit-transition: all 0.2s;
+            -moz-transition: all 0.2s;
+            -o-transition: all 0.2s;
+            -ms-transition: all 0.2s;
+            transition: all 0.2s;
+        }
+
+        .social-circle i {
+            color: #fff;
+            -webkit-transition: all 0.8s;
+            -moz-transition: all 0.8s;
+            -o-transition: all 0.8s;
+            -ms-transition: all 0.8s;
+            transition: all 0.8s;
+        }
+
+        .footer_2_right ul a {
+            background-color: #e02626;
+            border-radius: 5px;
+        }
+
+        .footer_2 {
+            margin-top: 30px;
+            border-top: 2px solid #1f1e1e;
+            border-bottom: 2px solid #1f1e1e;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .footer_2_left a {
+            color: #f4f4f4;
+            font-size: 18px;
+            letter-spacing: 1px;
+            border-right: 2px solid rgba(255,255,255,0.5);
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+            .footer_2_left a:hover {
+                text-decoration: underline;
+            }
+    </style>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="@Url.Action("Index","Home")"><span>Institute of </span>Fine Arts</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="@Url.Action("Index","Home")">Home</a>
+                <a class="nav-item nav-link" href="@Url.Action("Exihibition","Home")">Exihibition</a>
+                <a class="nav-item nav-link" href="@Url.Action("Gallery","Home")">Gallery</a>
+                <a class="nav-item nav-link" href="@Url.Action("Colloection","Home")">Collection</a>
+                <a class="nav-item nav-link" href="@Url.Action("Contact","Home")">Contact Us</a>
+                <button class="btn"><a href="@Url.Action("login2","Register")" style="text-decoration:none;color:none; cursor:pointer;" class="btn"> <i class="fas fa-user-circle"> Login / Sign up</i></a></button>
+            </div>
+        </div>
+    </nav>
+    <div class="main">
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="~/MainSite/images/9.jpg" alt="sing up image"></figure>
+
+                        <a href="@Url.Action("Index","Home")" class="signup-image-link">Back to Home Page</a>
+                    </div>
+
+                    <div class="signin-form">
+                        <h2 class="form-title">Sign up</h2>
+                        @using (Html.BeginForm("Login2", "Register", FormMethod.Post, new { @class = "register-form" }))
+                        {@Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" name="email" id="your_email" placeholder="Your E-Mail" />
+                        </div>
+                        <div class="form-group">
+                            <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="password" name="password" id="password" placeholder="Password" />
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                            <label for="remember-me" class="label-agree-term">
+                                <span><span></span></span>Remember
+                                me
+                            </label>
+                        </div>
+                        <div class="form-group form-button">
+                            <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
+                        </div>
+                    }
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="hi">
+        <div class="container hi">
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-3">
+                    <h3 style="color: #fff; letter-spacing: 1px; margin-bottom: 20px;">Institute Of Fine Arts</h3>
+                    <p style=" color: #fff; font-size: 18px;">Aptech Metro Star Gate<br>Karachi, Pakistan<br>PK 7521</p>
+                </div>
+                <div class="col-6" style="color: #fff; margin-bottom: 15px; font-size: 16px; letter-spacing: 1px;">
+                    <p style="color: #fff; margin-bottom: 15px; font-size: 16px; letter-spacing: 1px;"> Registration Open * +92-333-2245310 </p>
+                    <p style="color: #fff; margin-bottom: 15px; font-size: 16px; letter-spacing: 1px;">provide curricular and co-curricular opportunities for productive collaboration and teamwork. To facilitate the outstanding achievement of every student, to help each to attain their goals, and to aid them in their development. &copy; 2022 Institute Of Fine Arts. All Rights Reserved | Design by M.Farhan Atif</a></p>
+                </div>
+                <div class="col-3">
+                    <h1 style=" font-size: 100px; color: #fff;">IFA <span style=" font-size: 20px; line-height: 0; display: block; letter-spacing: 1px;">Institute Of Fine Arts</span></h1>
+                </div>
+            </div>
+            <hr />
+            <div class="footer_2 clearfix">
+                <div class="col-sm-7">
+                    <div class="footer_2_left">
+                        <a href="#">Sign Up For Headlines</a>
+                        <a href="#">Customer Detail</a>
+                        <a href="#">Connect With Us</a>
+                        <a href="#">Media</a>
+                        <a href="#">Work</a>
+                        <a class="border_none_1" href="#">Policy</a>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="footer_2_right pull-right">
+                        <ul class="social-network social-circle">
+                            <li><a href="#" class="icogithub" title="github"><i class="fab fa-github"></i></a></li>
+                            <li><a href="#" class="icoFacebook" title="Facebook"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="#" class="icoTwitter" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" class="icoGoogle" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr />
+        </div>
+</body>
+</html>

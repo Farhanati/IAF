@@ -1,0 +1,52 @@
+﻿@model IEnumerable<final.Models.review>
+
+@{
+    ViewBag.Title = "Review";
+    Layout = "~/Views/Shared/_Layoutadmin.cshtml";
+}
+
+<h2>Review</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-striped text-center">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.r_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.r_comment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.r_picture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.r_username)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr style="color: #fe295d;">
+        <td >
+            @Html.DisplayFor(modelItem => item.r_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.r_comment)
+        </td>
+        <td>
+            <img src="~/image/@item.r_picture" height="100px" , width="120px" class="img-circle" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.r_username)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>*@
+    </tr>
+}
+
+</table>

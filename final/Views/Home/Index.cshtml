@@ -1,0 +1,336 @@
+﻿@model IEnumerable<final.Models.expo>
+<section id="center">
+    <div class="clearfix">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="~/MainSite/img/1.jpg" width="2000px" height="120vh">
+                    <div class="carousel-caption">
+
+                    </div>
+                </div>
+                <div class="item ">
+                    <img src="~/MainSite/img/210.jpg" width="2000px" height="120vh">
+                    <div class="carousel-caption">
+
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="~/MainSite/img/3.jpg" width="2000px" height="120vh" alt="Third slide">
+                    <div class="carousel-caption">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="main-text hidden-xs">
+            <div class="col-md-12">
+                <div class="col-sm-4">
+                    <div class=" center_slide">
+                        <h1>INSTITUTE OF<br>FINE ARTS</h1>
+                        <p>Make your dreams colorful.</p>
+                        <h4> <a href="@Url.Action("Login","Register")">GET REGISTER</a></h4>
+                        <h6><a href="@Url.Action("Login","Register")">CONQUER THE WORLD <i class="fa fa-play-circle"></i></a></h6>
+                    </div>
+                </div>
+                <div class="col-sm-3"></div>
+                <div class="col-sm-5">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="deals_page">
+    <div class="container">
+        <div class="row">
+
+
+
+            <div class="deals_page clearfix">
+                @foreach (var item in ViewBag.first)
+                {
+                    if (item.exp_status == "Available")
+                    {
+
+
+
+                    <div class="col-sm-6">
+                        <div class="deals_page_left bg_1 clearfix" style="border-radius:30px 50px 30px;">
+                            <div class="col-sm-5">
+                                <div class="deals_page_left_1 card-image">
+                                    <a href="@Url.Action("Detail", "Home", new { @Id = item.exp_id })"><img src="~/image/@item.exp_img" width="100%" height="185px" style="border-radius:15px;"></a>
+                                </div>
+                            </div>
+                            <div class="col-sm-7 space_left" style="border-radius:15px;">
+                                <div class="deals_page_left_2">
+                                    <h6>@item.exp_owner</h6>
+                                    <h3><a href="@Url.Action("Detail", "Home", new { @Id = item.exp_id })">@item.exp_title</a></h3>
+                                    <p>@item.exp_discription</p>
+                                    <div class="clearfix deals_page_left_2_inner">
+                                        <a class="tag_2" href="@Url.Action("Detail", "Home", new { @Id = item.exp_id })">Read More <i class="fa fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>&nbsp;</p>
+                    </div>
+
+                    }
+                }
+             
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="blog_post">
+    <div class="blog_post_main clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="clinic_home text-center clearfix">
+                    <h1> LATEST BLOGS</h1>
+                    <p>  Sed augue semper porta.  Vestibulum lacinia arcu eget nulla.Class aptent taciti sociosqu ad litora torquent per<br> conubia nostra, per inceptos himenaeos Sed dignissim lacinia nunc.</p>
+                </div>
+                <div class="blog_post clearfix">
+                    @{
+                        foreach (var item in ViewBag.data)
+                        {
+                            if (item.exp_status == "Available")
+                            {
+
+
+                                <div class="col-sm-4">
+                                    <div class="blog_post_inner" style="background:#ffff;">
+                                        <div class="card-image"><img src="~/image/@item.exp_img" width="100%" height="300px"></div>
+                                        <h5 class="text-center">@item.exp_date -January - 2022</h5>
+                                        <h4 class="text-center"><a href="@Url.Action("Detail", "Home", new { @Id = item.exp_id })">@item.exp_title</a></h4>
+                                        <p class="text-center">@item.exp_discription</p>
+                                    </div>
+                                    <p>&nbsp;</p>
+                                </div>
+
+                            }
+                        }
+                    }
+                </div>
+                <div class="services_home_2 text-center clearfix">
+                    <h5><a href="@Url.Action("collection","Home")">View Our Blogs</a></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="team_home">
+    <div class="container">
+        <div class="row">
+            <div class="about_home text-center clearfix">
+                <h1 class="heading_tag">Our Staff</h1>
+                <p class="para_2"> Nulla quis sem at nibh elementum imperdiet Duis sagittis ipsum Praesent mauris Fusce<br> nec tellus sed augue semper porta.</p>
+            </div>
+            <div class="team_home clearfix">
+                
+                @foreach (var item in ViewBag.Staff)
+                {
+                    <article class="col-sm-3">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <a href="~/MainSite/img/800/2.jpg" title="Museum Art" class="zoom" data-title="Mr/Mrs @item.user_name the teacher of Institute Of fine Arts" data-footer="Repairing Center" data-type="image" data-toggle="lightbox">
+                                    <img src="~/image/@item.user_img" alt="Nature Portfolio">
+                                    <span class="overlay"><i class="glyphicon glyphicon-fullscreen"></i></span>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="team_home_inner text-center clearfix">
+                            <h4><a href="#">@item.user_name</a></h4>
+                            <p>Teacher</p>
+                        </div>
+                    </article>
+                }
+
+                <article class="col-sm-3">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <a href="~/image/@Session["Image"]" title="Museum Art" class="zoom" data-title="Mr<strong>@Session["Manager"]</strong> the Manager of Institute Of fine Arts" data-footer="Repairing Center" data-type="image" data-toggle="lightbox">
+                                <img src="~/image/@Session["Image"]" alt="Nature Portfolio">
+                                <span class="overlay"><i class="glyphicon glyphicon-fullscreen"></i></span>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="team_home_inner text-center clearfix">
+                        <h4><a href="#">@Session["Manager"]</a></h4>
+                        <p>Manager</p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="collection_detail">
+    <div class="container">
+        <div class="row">
+            <div class="collection_detail clearfix">
+                <h3>KNOW THE CATEGORIES</h3>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitursodales ligula in libero.Sed dignissim lacinia nunc.  Integer nec odio.Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Praesent mauris. </p>
+            </div>
+            <div class="collection_detail_1  collection_detail_home clearfix">
+
+
+                @{
+                    foreach (var item in ViewBag.one)
+                    {
+                        if (item.exp_status == "Available")
+                        {
+                            <div class="col-sm-4 space_left">
+                                <div class="collection_detail_1_left clearfix">
+                                    <div class="grid clearfix">
+                                        <figure class="effect-marley">
+                                            <img src="~/image/@item.exp_img" alt="img12">
+                                            <figcaption>
+                                                <h2>IFA</h2>
+                                                <p>@item.exp_title</p>
+                                                <a href="@Url.Action("Detail", "Home", new { @Id = item.exp_id })">View more</a>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="collection_detail_1_right">
+                                    <h2>@item.exp_owner:IFA</h2>
+                                    <p>@item.exp_discription </p>
+                                    <h4><a href="@Url.Action("Detail", "Home", new { @Id = item.exp_id })">READ MORE</a></h4>
+                                </div>
+
+                            </div>
+                        }
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="connect" class="gallery_page">
+    <div class="container">
+        <div class="row">
+            <div class="connect clearfix">
+                <h2>GALLERY</h2>
+            </div>
+            <div class="connect_1 clearfix">
+                <div class="gallery">
+                    @foreach (var item in ViewBag.gallery)
+                    {
+                       if (item.exp_status == "Available")
+                        {
+
+                    <div class="col-lg-3">
+                        <a href="~/image/@item.exp_img"  ><img src="~/image/@item.exp_img" style="width:250px; height:250px;" alt="" title="@item.exp_title"></a>
+                    </div>
+                            }
+                        }
+                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="sign_up" class="sign_up_collection">
+    <div class="container">
+        <div class="row">
+            <div class="sign_up_box text-center clearfix">
+                <h2>  Subscribe Our News Paper To Get Latest News </h2>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh <br>elementum imperdiet Duis sagittis ipsum.</p>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="your email address">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="button">
+                            SUBMIT
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about_home" class="clearfix">
+    <div class="about_home_main clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="about_home clearfix">
+                    <div class="col-sm-6">
+                        <div class="about_home_1 clearfix">
+                            <div class="col-sm-3 space_all">
+                                <div class="about_home_1_left">
+                                    <h2><i class="fas fa-plane-departure"></i></h2>
+                                </div>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="about_home_1_right">
+                                    <h4>OUR TOURS</h4>
+                                    <p> Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about_home_1 clearfix">
+                            <div class="col-sm-3 space_all">
+                                <div class="about_home_1_left">
+                                    <h2><i class="fas fa-globe-americas"></i></h2>
+                                </div>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="about_home_1_right">
+                                    <h4>FOREIGN TOURS</h4>
+                                    <p>Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="about_home_1 clearfix">
+                            <div class="col-sm-3 space_all">
+                                <div class="about_home_1_left">
+                                    <h2><i class="fas fa-archway"></i></h2>
+                                </div>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="about_home_1_right">
+                                    <h4>EXIBHITIONS</h4>
+                                    <p>Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about_home_1 clearfix">
+                            <div class="col-sm-3 space_all">
+                                <div class="about_home_1_left">
+                                    <h2><i class="fas fa-map-marked-alt"></i></h2>
+                                </div>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="about_home_1_right">
+                                    <h4>INSTITUTE OF FINE ARTS BRANCHES</h4>
+                                    <p>Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

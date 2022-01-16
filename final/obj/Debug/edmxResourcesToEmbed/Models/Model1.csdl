@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="projectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="projectEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="user_info" EntityType="projectModel.user_info" />
+    <EntitySet Name="expoes" EntityType="projectModel.expo" />
+    <EntitySet Name="admins" EntityType="projectModel.admin" />
+    <EntitySet Name="reviews" EntityType="projectModel.review" />
+  </EntityContainer>
+  <EntityType Name="user_info">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="user_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_age" Type="Int32" />
+    <Property Name="user_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_category" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_img" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="expo">
+    <Key>
+      <PropertyRef Name="exp_id" />
+    </Key>
+    <Property Name="exp_id" Type="Int32" Nullable="false" />
+    <Property Name="exp_title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="exp_img" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="exp_date" Type="Int32" />
+    <Property Name="exp_discription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="exp_owner" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="exp_status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="ad_id" />
+    </Key>
+    <Property Name="ad_id" Type="Int32" Nullable="false" />
+    <Property Name="ad_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ad_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ad_password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="review">
+    <Key>
+      <PropertyRef Name="r_id" />
+    </Key>
+    <Property Name="r_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="r_comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="r_picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="r_username" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,125 @@
+﻿@model IEnumerable<final.Models.review>
+@{
+    ViewBag.Title = "ReviewPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+<style>
+
+    .testimonial {
+        text-align: center;
+    }
+
+        .testimonial .description {
+            font-size: 15px;
+            color: #585656;
+            line-height: 27px;
+            margin-bottom: 30px;
+        }
+
+        .testimonial .pic {
+            display: inline-block;
+            width: 160px;
+            height: 160px;
+            border: 5px solid #1bddc6;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+            .testimonial .pic:after {
+                content: "";
+                border-width: 20px;
+                border-style: solid;
+                border-color: #1bddc6 #1bddc6 transparent transparent;
+                position: absolute;
+                bottom: -33px;
+                right: 20%;
+                transform: rotate(-15deg);
+                z-index: -1;
+            }
+
+            .testimonial .pic img {
+                width: 100%;
+                height: auto;
+            }
+
+        .testimonial .title {
+            display: block;
+            font-size: 22px;
+            font-weight: 700;
+            color: #413f3f;
+            letter-spacing: 1px;
+            text-transform: capitalize;
+            margin-bottom: 7px;
+        }
+
+        .testimonial .post {
+            display: block;
+            font-size: 15px;
+            color: #585656;
+            text-transform: capitalize;
+        }
+
+    .owl-theme .owl-controls {
+        margin-top: 10px;
+    }
+
+        .owl-theme .owl-controls .owl-page span {
+            width: 30px;
+            height: 3px;
+            background: #585656;
+            border-radius: 0;
+            opacity: 1;
+            transition: all 0.4s ease 0s;
+        }
+
+        .owl-theme .owl-controls .owl-page.active span,
+        .owl-theme .owl-controls.clickable .owl-page:hover span {
+            background: #1bddc6;
+        }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <br /><br />
+            <h1 class="text-center"> <u>Reviews </u></h1>
+            <hr />
+            <div id="testimonial-slider" class="owl-carousel">
+                @foreach (var item in Model)
+                {
+                <div class="testimonial">
+                    <h3 class="title"><i class="fas fa-user-edit text-warning"> @item.r_username </i></h3>
+                    <div class="pic">
+                        <img src="~/image/@item.r_picture" width="100%" height="100%">
+                    </div>
+                    <p class="description" style="font-size:x-large;">
+                        <b>
+                            @item.r_comment
+                        </b>
+                    </p>
+                </div>
+                }
+            </div>
+            <hr />
+            <br />            <br />
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#testimonial-slider").owlCarousel({
+            items: 1,
+            itemsDesktop: [1000, 1],
+            itemsDesktopSmall: [979, 1],
+            itemsTablet: [768, 1],
+            pagination: true,
+            navigation: false,
+            slideSpeed: 100,
+            autoPlay: true
+        });
+    });
+</script>

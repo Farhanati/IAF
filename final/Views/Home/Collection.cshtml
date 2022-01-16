@@ -1,0 +1,97 @@
+﻿@model IEnumerable<final.Models.expo>
+<section id="collection">
+    <div class="collection_main clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="collection text-center clearfix">
+                    <h1>IFA COLLECTION</h1>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search the Category">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button">
+                                SEARCH
+                            </button>
+                        </span>
+                    </div>
+                    <h2><a href="#">SEARCH THE CATEGORY</a></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="collection_detail">
+    <div class="container">
+        <div class="row">
+            <div class="collection_detail clearfix">
+                <h3>KNOW THE CATEGORIES</h3>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitursodales ligula in libero.Sed dignissim lacinia nunc.  Integer nec odio.Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Praesent mauris. </p>
+            </div>
+            <div class="collection_detail_1  collection_detail_home clearfix">
+                @{
+                    foreach (var item in ViewBag.one)
+                    {
+                        if (item.exp_status == "Available")
+                        {<div class="col-sm-4 space_left">
+                                <div class="collection_detail_1_left clearfix">
+                                    <div class="grid clearfix">
+                                        <figure class="effect-marley">
+                                            <img src="~/image/@item.exp_img" alt="img12">
+                                            <figcaption>
+                                                <h2>IFA</h2>
+                                                <p>@item.exp_title</p>
+                                                <a href="@Url.Action("Detail", "Home", new { @Id = item.exp_id })">View more</a>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="collection_detail_1_right">
+                                    <h2>@item.exp_owner:IFA</h2>
+                                    <p>@item.exp_discription</p>
+                                    <h4><a href="@Url.Action("Detail", "Home", new { @Id = item.exp_id })">READ MORE</a></h4>
+                                </div>
+
+                            </div>
+                        }
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="collection_area">
+    <div class="container">
+        <div class="row">
+            <div class="collection_area clearfix">
+                <div class="courses clearfix">
+                    <h3 class="heading_tag"> OUR CATEGORIES</h3>
+                </div>
+                <div class="team clearfix">
+                    @foreach (var item in Model)
+                    {
+                       
+
+
+                    <div class="col-sm-3 space_left">
+                        <div class="team_inner">
+                            <div class="card-image"><img src="~/image/@item.exp_img" width="100%" height="200px"></div>
+                            <h4><a href="@Url.Action("Detail", "Home", new { @Id = item.exp_id })">@item.exp_title</a></h4>
+                            <p class="para_1">@item.exp_discription]</p>
+
+
+                        </div>
+                        <p>&nbsp;</p>
+                    </div>
+
+                        
+                    }
+           
+                </div>
+         
+            </div>
+        </div>
+    </div>
+</section>

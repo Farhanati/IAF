@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="projectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="ad_id" />
+    </Key>
+    <Property Name="ad_id" Type="int" Nullable="false" />
+    <Property Name="ad_name" Type="varchar(max)" />
+    <Property Name="ad_email" Type="varchar(max)" />
+    <Property Name="ad_password" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="expo">
+    <Key>
+      <PropertyRef Name="exp_id" />
+    </Key>
+    <Property Name="exp_id" Type="int" Nullable="false" />
+    <Property Name="exp_title" Type="varchar(max)" />
+    <Property Name="exp_img" Type="varchar(max)" />
+    <Property Name="exp_date" Type="int" />
+    <Property Name="exp_discription" Type="varchar(max)" />
+    <Property Name="exp_owner" Type="varchar(max)" />
+    <Property Name="exp_status" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="review">
+    <Key>
+      <PropertyRef Name="r_id" />
+    </Key>
+    <Property Name="r_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="r_comment" Type="varchar(max)" />
+    <Property Name="r_picture" Type="varchar(max)" />
+    <Property Name="r_username" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="user_info">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="user_email" Type="varchar(max)" />
+    <Property Name="user_password" Type="varchar(max)" />
+    <Property Name="user_age" Type="int" />
+    <Property Name="user_address" Type="varchar(max)" />
+    <Property Name="user_category" Type="varchar(max)" />
+    <Property Name="user_name" Type="varchar(max)" />
+    <Property Name="user_img" Type="varchar(max)" />
+  </EntityType>
+  <EntityContainer Name="projectModelStoreContainer">
+    <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="expo" EntityType="Self.expo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="review" EntityType="Self.review" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user_info" EntityType="Self.user_info" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

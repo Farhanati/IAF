@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="projectModelStoreContainer" CdmEntityContainer="projectEntities">
+    <EntitySetMapping Name="user_info">
+      <EntityTypeMapping TypeName="projectModel.user_info">
+        <MappingFragment StoreEntitySet="user_info">
+          <ScalarProperty Name="user_img" ColumnName="user_img" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="user_category" ColumnName="user_category" />
+          <ScalarProperty Name="user_address" ColumnName="user_address" />
+          <ScalarProperty Name="user_age" ColumnName="user_age" />
+          <ScalarProperty Name="user_password" ColumnName="user_password" />
+          <ScalarProperty Name="user_email" ColumnName="user_email" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="expoes">
+      <EntityTypeMapping TypeName="projectModel.expo">
+        <MappingFragment StoreEntitySet="expo">
+          <ScalarProperty Name="exp_status" ColumnName="exp_status" />
+          <ScalarProperty Name="exp_owner" ColumnName="exp_owner" />
+          <ScalarProperty Name="exp_discription" ColumnName="exp_discription" />
+          <ScalarProperty Name="exp_date" ColumnName="exp_date" />
+          <ScalarProperty Name="exp_img" ColumnName="exp_img" />
+          <ScalarProperty Name="exp_title" ColumnName="exp_title" />
+          <ScalarProperty Name="exp_id" ColumnName="exp_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="admins">
+      <EntityTypeMapping TypeName="projectModel.admin">
+        <MappingFragment StoreEntitySet="admin">
+          <ScalarProperty Name="ad_password" ColumnName="ad_password" />
+          <ScalarProperty Name="ad_email" ColumnName="ad_email" />
+          <ScalarProperty Name="ad_name" ColumnName="ad_name" />
+          <ScalarProperty Name="ad_id" ColumnName="ad_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reviews">
+      <EntityTypeMapping TypeName="projectModel.review">
+        <MappingFragment StoreEntitySet="review">
+          <ScalarProperty Name="r_username" ColumnName="r_username" />
+          <ScalarProperty Name="r_picture" ColumnName="r_picture" />
+          <ScalarProperty Name="r_comment" ColumnName="r_comment" />
+          <ScalarProperty Name="r_id" ColumnName="r_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

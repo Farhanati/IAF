@@ -1,0 +1,74 @@
+﻿@model IEnumerable<final.Models.user_info>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layoutadmin.cshtml";
+}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-hover table-striped text-center">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.user_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user_email)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.user_password)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.user_age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user_address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user_category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user_img)
+        </th>
+        <th>
+
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr style="color: #fe295d;">
+
+            <td>
+                @Html.DisplayFor(modelItem => item.user_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user_email)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.user_password)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.user_age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user_address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user_category)
+            </td>
+            <td>
+                <img src="~/Image/@item.user_img" height="100px" , width="100px" class="img-circle" />
+            </td>
+            <td>
+                <button class="btn bg-warning text-black-50">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.user_id })
+                </button> |
+                <button class="btn bg-danger text-dark" style="text-decoration:none; color:black;">
+                    @Html.ActionLink("Delete", "Delete", new { id = item.user_id })
+                </button>
+            </td>
+        </tr>
+    }
+
+</table>
